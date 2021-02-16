@@ -1,0 +1,45 @@
+*, html{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.app-wrapper {
+  margin: 0 auto;
+  display: grid;
+  width: 100vw;
+  grid-template-areas:
+  "header header header"
+  "nav content content";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+
+}
+
+.header{
+  grid-area: header;
+  background-color: #0D6765;
+  padding: 15px;
+}
+
+.header img{
+  width: 30px;
+  
+}
+
+.nav{
+  grid-area: nav;
+  background-color: #0D6765;
+  max-width: 30vw;
+  padding: 20px;
+}
+
+.content{
+  grid-area: content;
+  max-width: 70vw;
+}
+
+.content img{
+  max-width: 100%;
+}
+
