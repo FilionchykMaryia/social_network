@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from './Post/Post';
+import Post from './Post';
 
 
 const Posts = () => {
@@ -10,8 +10,8 @@ const Posts = () => {
         <button>Add post</button>
       </div>
       <div className="my-posts">
-        <Post />
-        <Post />
+        <Post message="Hi, how are you?"/>
+        <Post message="It's my first post"/>
         <Post />
         <Post />
       </div>

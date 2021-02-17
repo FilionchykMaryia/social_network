@@ -2,7 +2,7 @@ import React from 'react';
 import './style/style.scss';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import Content from './components/Content/Content';
+import Content from './components/Content';
 // import './img/logo4.png';
 
 const App = () => {
