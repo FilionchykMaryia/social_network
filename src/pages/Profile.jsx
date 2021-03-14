@@ -1,6 +1,6 @@
 import React from 'react';
-import Posts from './Posts/Posts';
-import User from './User';
+import Posts from '../components/Posts';
+import User from '../components/User';
 
 
 const Profile = () => {
