@@ -3,22 +3,23 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './style/style.scss';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import Dialogs from './pages/Dialogs';
-import Music from './pages/Music';
-import News from './pages/News';
-import Profile from './pages/Profile';
-import Settings from './pages/Settings';
+import Dialogs from '../src/components/Dialogs/Dialogs';
+import Music from '../src/components/Music/Music';
+import News from '../src/components/News/News';
+import Profile from '../src/components/Profile/Profile';
+import Settings from '../src/components/Settings/Settings';
 // import './img/logo4.png';
 
-const App = () => {
+const App = (props) => {
+
   return (
     <div className="app-wrapper ">
       <BrowserRouter>
         <Header /> 
-        <Navbar />
+        <Navbar state={props.state.dialogsPage}/>
           <div className="content">
-            <Route path="/profile" component={Profile}/>
-            <Route path="/dialogs" component={Dialogs}/>
+            <Route path="/profile" render={() => <Profile state={props.state.profilePage} />} />
+            <Route path="/dialogs" render={() => <Dialogs state={props.state.dialogsPage} />} />
             <Route path="/news" component={News}/>
             <Route path="/music" component={Music}/>
             <Route path="/settings" component={Settings}/>

@@ -26,15 +26,15 @@
 }
 .posts{
   grid-row: 3 / 4;
+  margin-top: 20px;
 }
 
 .my-posts{
   &__item{
-    img{
-      width: 60px;
-      height: 60px;
-      border: 1px solid transparent;
-      border-radius: 50%;
-    }
+
   }
+}
+
+.new-post{
+  margin: 30px 0;
 }

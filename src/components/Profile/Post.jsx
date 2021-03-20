@@ -4,7 +4,7 @@ import React from 'react';
 const Post = (props) => {
   return (
         <div className="my-posts__item">
-          <img src={process.env.PUBLIC_URL +`/img/avatar.png`} />
+          <img  className="avatar" src={process.env.PUBLIC_URL +`/img/avatar.png`} />
           <div>
             <div>{props.message}</div>
             <span>Like</span>

@@ -1,6 +1,7 @@
 @import "Header";
 @import "Navbar";
 @import "Profile";
+@import "Dialogs";
 @import "helpers";
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
@@ -14,7 +15,7 @@
 }
 
 body{
-  background: $light;
+  background: $gray;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -34,6 +35,9 @@ body{
   margin: 0 auto;
 }
 
+.active{
+  color: $dark;
+}
 
 
 

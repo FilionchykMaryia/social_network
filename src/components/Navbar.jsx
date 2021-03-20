@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter, Link, NavLink } from 'react-router-dom';
 
 
-const Navbar = () => {
+const Navbar = (props) => {
+
+ let firstsFriends = props.state.dialogs.slice(0, 6);
   return (
     
       <nav className="nav">
@@ -21,6 +23,15 @@ const Navbar = () => {
         </div>
         <div className="nav-item">
           <NavLink to="/settings" className="nav-link">Settings</NavLink>
+        </div>
+
+        <div className="nav-item">
+          <NavLink to="/friends" className="nav-link" activeClassName="active">Friends</NavLink>
+          <div className="friends-pre">
+            {firstsFriends.map( dialog => 
+              <img className="mini-ava" key={dialog.id} src={process.env.PUBLIC_URL +`/img/avatars/${dialog.avatar}`}  alt={dialog.name}/>
+            )}
+          </div>
         </div>
         
       </nav>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const User = () => {
+const ProfileInfo = () => {
   return (
     <>
       <div className="content-banner__img"></div>
@@ -11,4 +11,4 @@ const User = () => {
     </>
   )
 }
-export default User;
+export default ProfileInfo;

@@ -1,0 +1,52 @@
+@import "helpers";
+
+.dialogs{
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  background-color: $gray;
+  gap: 10%;
+  
+  &-items{
+    padding: 10px;
+    
+  }
+  &-item{
+    display: flex;
+    align-items: center;
+    padding: 10px 50px 10px 10px;
+    margin: 3px;
+    border: 1px solid $light;
+    border-radius: 4px;
+    &:hover{
+      background-color: rgba($medium, .3);
+    }
+  }
+}
+
+.messages{
+  padding: 10px;
+}
+
+.message{
+  color: $dark;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: $light;
+  padding: 0.8rem;
+  margin: 3px;
+  width: 60%;
+}
+
+.dialog{
+  color: $light;
+  text-decoration: none;
+}
+
+.avatar{
+  width: 60px;
+  height: 60px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
