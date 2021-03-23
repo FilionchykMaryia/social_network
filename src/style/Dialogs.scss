@@ -5,6 +5,7 @@
   grid-template-columns: 2fr 10fr;
   background-color: $gray;
   gap: 10%;
+  height: 100vh;
   
   &-items{
     padding: 10px;
@@ -22,9 +23,15 @@
     }
   }
 }
+.chat{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 .messages{
   padding: 10px;
+  flex: 1 0 auto;
 }
 
 .message{
@@ -35,6 +42,7 @@
   padding: 0.8rem;
   margin: 3px;
   width: 60%;
+  
 }
 
 .dialog{
@@ -49,4 +57,14 @@
   border-radius: 50%;
   object-fit: cover;
   margin-right: 20px;
+}
+
+.new-message{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 auto;
+  textarea{
+    width: 100%;
+  }
 }

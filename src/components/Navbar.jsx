@@ -5,6 +5,10 @@ import { BrowserRouter, Link, NavLink } from 'react-router-dom';
 const Navbar = (props) => {
 
  let firstsFriends = props.state.dialogs.slice(0, 6);
+ let friendsAvatars = firstsFriends.map( dialog => 
+  <img className="mini-ava" key={dialog.id} src={process.env.PUBLIC_URL +`/img/avatars/${dialog.avatar}`}  alt={dialog.name}/>
+);
+
   return (
     
       <nav className="nav">
@@ -28,9 +32,7 @@ const Navbar = (props) => {
         <div className="nav-item">
           <NavLink to="/friends" className="nav-link" activeClassName="active">Friends</NavLink>
           <div className="friends-pre">
-            {firstsFriends.map( dialog => 
-              <img className="mini-ava" key={dialog.id} src={process.env.PUBLIC_URL +`/img/avatars/${dialog.avatar}`}  alt={dialog.name}/>
-            )}
+            {friendsAvatars}
           </div>
         </div>
         
