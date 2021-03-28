@@ -8,6 +8,7 @@ import Music from '../src/components/Music/Music';
 import News from '../src/components/News/News';
 import Profile from '../src/components/Profile/Profile';
 import Settings from '../src/components/Settings/Settings';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 // import './img/logo4.png';
 
 const App = (props) => {
@@ -19,10 +20,8 @@ const App = (props) => {
         <Navbar state={props.state.dialogsPage}/>
           <div className="content">
             <Route path="/profile" 
-              render={() => <Profile 
-              profilePage={props.state.profilePage} 
-              dispatch={props.dispatch}/>} />
-            <Route path="/dialogs" render={() => <Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}/>} />
+              render={() => <Profile store={props.store}/>} />
+            <Route path="/dialogs" render={() => <DialogsContainer store={props.store}/>} />
             <Route path="/news" component={News}/>
             <Route path="/music" component={Music}/>
             <Route path="/settings" component={Settings}/>

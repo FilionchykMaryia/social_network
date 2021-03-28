@@ -5,22 +5,20 @@ import  Message from './Message';
 
 const Chat = (props) => {
 
-  let messages = props.messages.map(message => <Message key={message.id} message={message.message}/>);
+  let state = props.dialogsPage;
 
+  let messages = state.messages.map(message => <Message key={message.id} message={message.message}/>);
+  let newMessageText = state.newMessageText;
   let newMessageElement = React.createRef();
 
   let addMessage = () => {
-    // let text = newMessageElement.current.value;
-    // alert(text);
-    props.dispatch(sendMessageActionCreator());
+    props.sendMessage();
   }
 
-  let onMessageChange = () => {
+  let onNewMessageChange = () => {
     let text = newMessageElement.current.value;
-    
-    let action = updateNewMessageBodyCreator(text);
-    // let action = {type: 'UPDATE-NEW-POST-TEXT', newText: text};
-    props.dispatch(action);
+    // props.store.dispatch(updateNewMessageBodyCreator(text));
+    props.updateNewMessageBody(text);
    
   }
   
@@ -30,7 +28,7 @@ const Chat = (props) => {
             {messages}
           </div>
           <div className="new-message">
-            <textarea onChange={ onMessageChange } ref={ newMessageElement } value={props.newMessageText}></textarea>
+            <textarea onChange={ onNewMessageChange } ref={ newMessageElement } value={ newMessageText }></textarea>
             <button onClick={ addMessage }>Send message</button>
           </div>
         </div>
