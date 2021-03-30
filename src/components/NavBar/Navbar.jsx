@@ -4,10 +4,10 @@ import { BrowserRouter, Link, NavLink } from 'react-router-dom';
 
 const Navbar = (props) => {
 
- let firstsFriends = props.state.dialogs.slice(0, 6);
- let friendsAvatars = firstsFriends.map( dialog => 
-  <img className="mini-ava" key={dialog.id} src={process.env.PUBLIC_URL +`/img/avatars/${dialog.avatar}`}  alt={dialog.name}/>
-);
+  let firstsFriends = props.state.dialogs.slice(0, 6);
+  let friendsAvatars = firstsFriends.map( dialog => 
+    <img className="mini-ava" key={dialog.id} src={process.env.PUBLIC_URL +`/img/avatars/${dialog.avatar}`}  alt={dialog.name}/>
+  );
 
   return (
     
