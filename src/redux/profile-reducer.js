@@ -1,5 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const ADD_POST = 'ADD_POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 
 let initialState = {
   posts: [
@@ -35,8 +35,8 @@ const profileReducer = (state = initialState, action) => {
   }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const updateNewPostActionCreator = (text) => 
+export const addPost = () => ({type: ADD_POST});
+export const updateNewPost = (text) => 
   ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
 export default profileReducer;
