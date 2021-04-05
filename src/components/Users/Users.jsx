@@ -1,27 +1,32 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
-    let pages = [];
+  let pages = [];
     for(let i=1; i <= pagesCount; i++){
       pages.push(i);
-    }
+  }
+
 
   return <div>
-  <div>
+  {/* <div>
     {pages.map((p, i) => {
       return <span onClick={ (e) => {props.onPageChanged(p)}} className={props.currentPage === p ? 'selected-page' : ''} key={i}> {p} </span>
     })}
     
-  </div>
+  </div> */}
+ 
 {
   props.users.map(u => <div key={u.id}>
     <span>
       <div>
-        <img className="avatar" src={ u.photos.small != null ? 
-        u.photos.small : 
-        process.env.PUBLIC_URL +`/img/avatars/3.jpg`} alt="avatar"/>
+        <NavLink to={'/profile/' + u.id}>
+          <img className="avatar" src={ u.photos.small != null ? 
+          u.photos.small : 
+          process.env.PUBLIC_URL +`/img/avatars/3.jpg`} alt="avatar"/>
+        </NavLink>
       </div>
       <div>
         {

@@ -1,0 +1,24 @@
+@import "helpers";
+.pagination {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-height: 40px;
+}
+.pagination a {
+  font-size: 14px;
+  text-decoration: none;
+  padding: 5px 12px;
+  color: $light;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  line-height: 1.5;
+}
+.pagination a.undefined {
+  cursor: pointer;
+  background-color: $dark-transparent;
+  
+}
+
