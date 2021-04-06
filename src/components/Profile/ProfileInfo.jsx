@@ -3,7 +3,7 @@ import Preloader from '../Preloader';
 
 
 const ProfileInfo = (props) => {
-  console.log(props);
+  
   if (!props.profile) {
     return <Preloader />
   }
@@ -12,7 +12,7 @@ const ProfileInfo = (props) => {
     <>
       <div className="content-banner__img"></div>
       <div className="profile">
-        <img src={props.profile.photos.large} alt="avatar"/>
+        <img className="profile-avatar" src={props.profile.photos.large ? props.profile.photos.large : process.env.PUBLIC_URL +`/img/avatars/3.jpg`} alt="avatar"/>
         <div className="profile-decription">
           <div className="profile-decription__items">
             <span className="label">Name:</span> {props.profile.fullName}</div>

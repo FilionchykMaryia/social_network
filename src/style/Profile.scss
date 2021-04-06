@@ -26,6 +26,14 @@
   display: flex;
   flex-direction: row;
   gap: 15px;
+  &-avatar{
+    max-width: 160px;
+    max-height: 160px;
+    border: 1px solid transparent;
+    border-radius: 5%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
   &-decription{
     &__items {
     
