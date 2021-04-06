@@ -34,8 +34,8 @@ console.log(props);
             {messages}
           </div>
           <div className="new-message">
-            <textarea onChange={ onNewMessageChange } ref={ newMessageElement } value={ newMessageText }></textarea>
-            <button onClick={ addMessage }>Send message</button>
+            <textarea className="textarea" onChange={ onNewMessageChange } ref={ newMessageElement } value={ newMessageText }></textarea>
+            <button className="button" onClick={ addMessage }>Send message</button>
           </div>
         </div>
       </div>

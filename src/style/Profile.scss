@@ -1,15 +1,6 @@
 @import "helpers";
 
 .content{
-  // grid-area: content;
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  max-width: 100%;
-  display: grid;
-  grid-template-rows: 2fr 2fr 2fr;
-  height: 100vh;
-  // margin: 10px;
-
   &-banner__img {
     background-image: url('../img/banner.jpg');
     grid-row: 1 / 2;
@@ -34,11 +25,11 @@
     object-fit: cover;
     margin-right: 20px;
   }
-  &-decription{
-    &__items {
+  // &-decription{
+  //   &__items {
     
-    }
-  }
+  //   }
+  // }
 }
 
 .label{
@@ -51,11 +42,11 @@
   margin-top: 20px;
 }
 
-.my-posts{
-  &__item{
+// .my-posts{
+//   &__item{
 
-  }
-}
+//   }
+// }
 
 .new-post{
   margin: 30px 0;

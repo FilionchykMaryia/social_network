@@ -1,6 +1,4 @@
 import React from 'react';
-import { sendMessageActionCreator, updateNewMessageBodyCreator } from '../../redux/dialogs-reducer';
-
 import  Message from './Message';
 
 const Chat = (props) => {
@@ -29,7 +27,7 @@ const Chat = (props) => {
           </div>
           <div className="new-message">
             <textarea onChange={ onNewMessageChange } ref={ newMessageElement } value={ newMessageText }></textarea>
-            <button onClick={ addMessage }>Send message</button>
+            <button className="button" onClick={ addMessage }>Send message</button>
           </div>
         </div>
   )
