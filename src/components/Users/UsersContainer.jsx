@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { follow, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetching, unfollow, toggleFollowingProgress , getUsers} from '../../redux/users-reducer';
-import * as axios from 'axios';
 import Users from './Users';
 import Preloader from '../Preloader';
 import Pagination from "react-js-pagination";
-import { usersAPI } from '../../api/api';
 
 class UsersContainer extends React.Component {
 
