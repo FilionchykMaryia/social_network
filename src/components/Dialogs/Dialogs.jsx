@@ -3,6 +3,7 @@ import Chat from './Chat';
 import MyDialogs from './MyDialogs';
 import  Message from './Message';
 import  DialogItem  from './DialogItem';
+import { Redirect } from 'react-router';
 
 const Dialogs = (props) => {
   let state = props.dialogsPage;
@@ -23,7 +24,8 @@ const Dialogs = (props) => {
    
   }
 
-console.log(props);
+  // if (!props.isAuth) return <Redirect to={'/login'}/>
+  
   return (
       <div className="dialogs">
         <div className="dialogs-items">

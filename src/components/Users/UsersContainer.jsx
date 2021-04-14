@@ -4,19 +4,13 @@ import { follow, setCurrentPage, setTotalUsersCount, setUsers, toggleIsFetching,
 import Users from './Users';
 import Preloader from '../Preloader';
 import Pagination from "react-js-pagination";
+import { withAuthRedirect } from '../hoc/withAuthRedirect';
 
 class UsersContainer extends React.Component {
 
 componentDidMount(){
   this.props.getUsers(this.props.currentPage, this.props.pageSize);
   
-  // this.props.toggleIsFetching(true);
-  // usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-    
-  //   this.props.toggleIsFetching(false);
-  //   this.props.setUsers(data.items);
-  //   this.props.setTotalUsersCount(data.totalCount);
-  // });
 }
 
   onPageChanged = (pageNumber) => {
@@ -24,17 +18,6 @@ componentDidMount(){
     this.props.getUsers(pageNumber, this.props.pageSize);
     this.props.setCurrentPage(pageNumber);
 
-
-    // this.props.toggleIsFetching(true);
-    //  this.props.setCurrentPage(pageNumber);
-    // // axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`, {
-    // //   withCredentials: true
-    // // })
-    // usersAPI.getUsers(pageNumber, this.props.pageSize)
-    //   .then(data => {
-    //     this.props.toggleIsFetching(false); 
-    //     this.props.setUsers(data.items)
-    //   });
   }
 
   render(){ 
@@ -72,6 +55,8 @@ const mapStateToProps = (state) =>{
     followingInProgress: state.usersPage.followingInProgress,
   }
 }
+//hoc redirect
+let withRedirect = withAuthRedirect(UsersContainer);
 
 export default connect(mapStateToProps, {
   follow,
@@ -79,5 +64,5 @@ export default connect(mapStateToProps, {
   setCurrentPage,
   toggleFollowingProgress,
   getUsers
-})(UsersContainer);
+})(withRedirect);
 
