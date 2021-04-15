@@ -5,6 +5,7 @@ import Users from './Users';
 import Preloader from '../Preloader';
 import Pagination from "react-js-pagination";
 import { withAuthRedirect } from '../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 class UsersContainer extends React.Component {
 
@@ -56,13 +57,23 @@ const mapStateToProps = (state) =>{
   }
 }
 //hoc redirect
-let withRedirect = withAuthRedirect(UsersContainer);
+// let withRedirect = withAuthRedirect(UsersContainer);
 
-export default connect(mapStateToProps, {
-  follow,
-  unfollow,
-  setCurrentPage,
-  toggleFollowingProgress,
-  getUsers
-})(withRedirect);
+// export default connect(mapStateToProps, {
+//   follow,
+//   unfollow,
+//   setCurrentPage,
+//   toggleFollowingProgress,
+//   getUsers
+// })(withRedirect);
 
+export default compose(
+  connect(mapStateToProps, {
+    follow,
+    unfollow,
+    setCurrentPage,
+    toggleFollowingProgress,
+    getUsers
+  }),
+  withAuthRedirect,
+)(UsersContainer)
