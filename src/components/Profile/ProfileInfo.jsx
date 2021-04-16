@@ -1,5 +1,6 @@
 import React from 'react';
 import Preloader from '../Preloader';
+import ProfileStatus from './ProfileStatus';
 
 
 const ProfileInfo = (props) => {
@@ -10,9 +11,10 @@ const ProfileInfo = (props) => {
 
   return (
     <>
-      <div className="content-banner__img"></div>
+      {/* <div className="content-banner__img"></div> */}
       <div className="profile">
         <img className="profile-avatar" src={props.profile.photos.large ? props.profile.photos.large : process.env.PUBLIC_URL +`/img/avatars/3.jpg`} alt="avatar"/>
+        <ProfileStatus status={'Hello my friends'}/>
         <div className="profile-decription">
           <div className="profile-decription__items">
             <span className="label">Name:</span> {props.profile.fullName}</div>
